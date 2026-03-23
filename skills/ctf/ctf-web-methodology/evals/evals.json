@@ -1,0 +1,44 @@
+{
+  "skill_name": "ctf-web-methodology",
+  "evals": [
+    {
+      "id": 1,
+      "name": "ctf-systematic-approach",
+      "prompt": "你正在参加一个 Web CTF 比赛，拿到了一个目标 URL http://target:5000。你对这个应用一无所知。请描述你的系统化解题流程。",
+      "expected_output": "CTF Web 挑战的系统化解题框架",
+      "expectations": [
+        "侦察|端点发现|目录扫描|信息收集",
+        "源码|HTML注释|JS文件|robots.txt",
+        "登录|注册|认证|默认凭据",
+        "注入|SQL|SSTI|XSS|命令注入|漏洞类型",
+        "flag|FLAG{|搜索flag|提取flag"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ctf-multi-step-chain",
+      "prompt": "CTF 题目描述：'一个简单的博客系统'。你发现了登录页面（admin:admin 失败）、注册功能、发帖功能。请描述你会尝试哪些攻击链。",
+      "expected_output": "多种攻击路径的组合利用",
+      "expectations": [
+        "注册|Mass Assignment|role|权限提升",
+        "SQL注入|登录绕过|' OR 1=1|认证绕过",
+        "XSS|存储型|Cookie窃取|管理员",
+        "IDOR|用户ID遍历|帖子ID|越权",
+        "SSTI|模板注入|发帖内容|用户输入点"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ctf-time-pressure",
+      "prompt": "CTF 剩余 30 分钟。你发现了 SQL 注入（UNION SELECT 可用，3 列），已经拿到了数据库名和表名。请描述你的快速 flag 提取策略。",
+      "expected_output": "高效的 flag 提取步骤",
+      "expectations": [
+        "直接搜flag|LIKE '%flag%'|关键词搜索",
+        "所有表|information_schema|遍历表名",
+        "GROUP_CONCAT|一次性提取|效率",
+        "长度确认|LENGTH|完整性校验",
+        "FLAG{|格式验证|提交前检查"
+      ]
+    }
+  ]
+}

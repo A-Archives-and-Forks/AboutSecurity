@@ -1,0 +1,31 @@
+{
+  "skill_name": "cloud-iam-audit",
+  "evals": [
+    {
+      "id": 1,
+      "name": "cloud-iam-enum",
+      "prompt": "你获取了一组 AWS IAM 凭据(Access Key + Secret Key)。请描述你如何枚举该凭据的权限并寻找提权路径。",
+      "expected_output": "AWS IAM 权限枚举和提权",
+      "expectations": [
+        "sts get-caller-identity|身份确认|账户信息",
+        "枚举策略|iam list-attached|list-policies|权限列表",
+        "Pacu|enumerate-iam|自动化枚举|工具",
+        "提权路径|iam:PassRole|iam:CreatePolicy|权限提升",
+        "Lambda|EC2|S3|横向移动|资源访问"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "cloud-iam-misconfiguration",
+      "prompt": "你在审计 AWS 环境时发现一个 IAM 角色配置了 iam:PassRole + lambda:CreateFunction + lambda:InvokeFunction 权限组合。请分析安全风险。",
+      "expected_output": "IAM 权限组合的提权风险",
+      "expectations": [
+        "PassRole|传递角色|Lambda|提权链",
+        "创建Lambda|附加高权限角色|执行任意代码",
+        "管理员角色|AdministratorAccess|目标角色",
+        "最小权限|权限边界|Permission Boundary",
+        "检测|CloudTrail|日志|监控"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "skill_name": "mobile-backend",
+  "evals": [
+    {
+      "id": 1,
+      "name": "mobile-backend-api-test",
+      "prompt": "你在测试一个移动应用的后端 API。通过抓包发现移动端使用 REST API 与服务器通信。请描述你的测试方法。",
+      "expected_output": "移动应用后端 API 测试方法",
+      "expectations": [
+        "抓包|Burp|代理|证书安装|中间人",
+        "API|端点枚举|接口发现|隐藏API",
+        "认证|Token|JWT|API Key|绕过",
+        "越权|IDOR|水平越权|垂直越权",
+        "加固|证书固定|SSL Pinning|绕过"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "mobile-backend-bypass",
+      "prompt": "移动应用实现了 SSL Pinning 和请求签名机制，导致 Burp 无法直接抓包。请描述你的绕过方法。",
+      "expected_output": "移动应用安全机制绕过",
+      "expectations": [
+        "Frida|objection|Hook|动态插桩",
+        "SSL Pinning|证书固定|禁用验证|绕过",
+        "签名|算法逆向|重放|签名伪造",
+        "root检测|越狱检测|绕过检测",
+        "反编译|jadx|smali|逆向分析"
+      ]
+    }
+  ]
+}

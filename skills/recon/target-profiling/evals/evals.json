@@ -1,0 +1,31 @@
+{
+  "skill_name": "target-profiling",
+  "evals": [
+    {
+      "id": 1,
+      "name": "target-profiling-web-app",
+      "prompt": "你拿到一个目标 Web 应用 http://target:8080。需要在 5 分钟内完成目标画像。请描述你如何快速确定技术栈、功能模块和潜在攻击面。",
+      "expected_output": "快速目标画像方法论",
+      "expectations": [
+        "技术栈|Server头|X-Powered-By|框架识别",
+        "功能模块|登录|注册|搜索|上传|功能枚举",
+        "输入点|表单|参数|API端点|攻击面",
+        "认证|Session|JWT|Cookie|认证机制",
+        "WAF|CDN|防护检测|安全措施识别"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "target-profiling-organization",
+      "prompt": "你在做一次针对某公司的红队评估。请描述你如何构建目标组织的完整画像（技术资产 + 人员信息）。",
+      "expected_output": "组织级目标画像",
+      "expectations": [
+        "域名|IP段|ASN|技术资产",
+        "员工|LinkedIn|邮箱格式|人员信息",
+        "技术栈|招聘信息|推断技术|供应链",
+        "外部服务|SaaS|云服务|第三方资产",
+        "攻击路径|优先级|最可能的突破口"
+      ]
+    }
+  ]
+}

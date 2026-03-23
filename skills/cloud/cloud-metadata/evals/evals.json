@@ -1,0 +1,31 @@
+{
+  "skill_name": "cloud-metadata",
+  "evals": [
+    {
+      "id": 1,
+      "name": "cloud-metadata-ssrf",
+      "prompt": "你在一个部署在 AWS EC2 上的 Web 应用中发现了 SSRF 漏洞。请描述如何利用此漏洞通过云实例元数据获取敏感信息。",
+      "expected_output": "SSRF 利用云元数据服务",
+      "expectations": [
+        "169.254.169.254|元数据|metadata|实例数据",
+        "IAM角色|临时凭据|AccessKey|Secret",
+        "IMDSv1|IMDSv2|Token|版本区别",
+        "security-credentials|角色名称|凭据路径",
+        "AWS CLI|凭据利用|S3|EC2|横向移动"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "cloud-metadata-multi-cloud",
+      "prompt": "请对比 AWS、GCP、Azure 三大云平台的实例元数据服务端点和利用方法。",
+      "expected_output": "多云元数据利用对比",
+      "expectations": [
+        "AWS|169.254.169.254|/latest/meta-data",
+        "GCP|metadata.google.internal|Metadata-Flavor",
+        "Azure|169.254.169.254|Metadata:true|api-version",
+        "Header|IMDSv2|Token|认证要求",
+        "防护|绕过|TTL=1|Hop限制"
+      ]
+    }
+  ]
+}

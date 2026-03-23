@@ -1,0 +1,31 @@
+{
+  "skill_name": "multi-layer-network",
+  "evals": [
+    {
+      "id": 1,
+      "name": "multi-layer-pivot",
+      "prompt": "你在外网攻破了一台 DMZ 服务器(eth0: 公网, eth1: 10.0.1.0/24)。目标内网 10.0.2.0/24 只有从 10.0.1.0/24 才能访问。请描述你的多层网络穿透方案。",
+      "expected_output": "多层网络穿透方案",
+      "expectations": [
+        "代理|socks|隧道|穿透工具",
+        "chisel|frp|ssh隧道|端口转发",
+        "proxychains|代理链|多层代理",
+        "路由|网段|跳板|pivot",
+        "扫描|内网发现|通过代理扫描|nmap"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "multi-layer-tunnel-setup",
+      "prompt": "你需要从攻击机通过 DMZ(10.0.1.5) 和内网一层(10.0.2.10) 到达核心网络(10.0.3.0/24)。请描述具体的三层隧道搭建步骤。",
+      "expected_output": "三层隧道搭建",
+      "expectations": [
+        "第一层|DMZ|正向/反向代理|socks",
+        "第二层|内网|二级代理|链式",
+        "第三层|核心网|多跳|最终访问",
+        "端口|监听|转发|映射",
+        "稳定性|断线重连|keepalive|持久隧道"
+      ]
+    }
+  ]
+}

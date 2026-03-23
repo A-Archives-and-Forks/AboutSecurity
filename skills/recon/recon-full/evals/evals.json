@@ -1,0 +1,31 @@
+{
+  "skill_name": "recon-full",
+  "evals": [
+    {
+      "id": 1,
+      "name": "recon-full-workflow",
+      "prompt": "你收到一个渗透测试目标：example.com（授权范围：*.example.com 及其所有 IP）。请描述你的完整信息收集流程。",
+      "expected_output": "从域名到可攻击面的完整侦察流程",
+      "expectations": [
+        "子域名|subdomain|amass|subfinder|子域枚举",
+        "端口扫描|nmap|masscan|开放端口",
+        "指纹识别|技术栈|CMS|框架|版本",
+        "目录扫描|dirsearch|ffuf|路径发现",
+        "存活检测|httpx|httprobe|URL存活"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "recon-attack-surface-analysis",
+      "prompt": "子域名枚举发现了 30 个子域，端口扫描发现了 5 台服务器共 20 个开放端口。请描述你如何分析和优先排序攻击面。",
+      "expected_output": "攻击面分析和优先级排序方法",
+      "expectations": [
+        "优先级|高价值目标|管理后台|API|排序",
+        "Web服务|HTTP/HTTPS|优先测试Web",
+        "版本|过时软件|已知CVE|漏洞匹配",
+        "登录页面|认证|默认凭据|入口点",
+        "去重|合并|聚合|结果整理"
+      ]
+    }
+  ]
+}

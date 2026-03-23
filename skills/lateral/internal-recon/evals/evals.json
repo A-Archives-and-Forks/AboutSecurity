@@ -1,0 +1,31 @@
+{
+  "skill_name": "internal-recon",
+  "evals": [
+    {
+      "id": 1,
+      "name": "internal-recon-network",
+      "prompt": "你刚通过 VPN 或 SSH 隧道进入了目标内网(10.0.0.0/24)。请描述你的内网侦察流程。",
+      "expected_output": "内网侦察流程",
+      "expectations": [
+        "存活探测|ping sweep|arp扫描|主机发现",
+        "端口扫描|nmap|服务发现|内网服务",
+        "SMB|NetBIOS|Windows共享|网络服务",
+        "DNS|域名|内网域名解析|服务发现",
+        "VLAN|网段|路由|网络拓扑"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "internal-recon-service-analysis",
+      "prompt": "内网扫描发现：10.0.0.10(DC, 88/389/445), 10.0.0.20(Web, 80/443/8080), 10.0.0.30(DB, 3306/5432), 10.0.0.40(File, 21/445/2049)。请分析优先攻击目标和原因。",
+      "expected_output": "内网目标优先级分析",
+      "expectations": [
+        "域控|Domain Controller|Kerberos|88端口|最高价值",
+        "数据库|3306|5432|数据|敏感信息",
+        "文件服务器|SMB|NFS|共享|信息泄露",
+        "Web|8080|管理接口|内网应用|凭据",
+        "攻击路径|从弱到强|逐步深入|策略"
+      ]
+    }
+  ]
+}

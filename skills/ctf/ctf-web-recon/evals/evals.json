@@ -1,0 +1,31 @@
+{
+  "skill_name": "ctf-web-recon",
+  "evals": [
+    {
+      "id": 1,
+      "name": "ctf-recon-first-steps",
+      "prompt": "CTF 题目给了你一个 URL http://target:8080。请描述你在前 2 分钟内应该做的所有侦察步骤。",
+      "expected_output": "快速高效的 CTF 侦察清单",
+      "expectations": [
+        "robots.txt|.git|.env|敏感文件检查",
+        "目录扫描|dirsearch|ffuf|端点发现",
+        "源码查看|HTML注释|JS文件|隐藏信息",
+        "响应头|Server|Cookie|技术栈识别",
+        "API文档|/docs|/swagger|接口发现"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ctf-recon-tech-stack",
+      "prompt": "访问目标后你看到：响应头有 X-Powered-By: Express，Cookie 名是 connect.sid，页面中有 __NEXT_DATA__ 变量。请判断技术栈并描述针对性的攻击方向。",
+      "expected_output": "技术栈识别和对应攻击面",
+      "expectations": [
+        "Node.js|Express|JavaScript后端",
+        "Next.js|React|SSR|前端框架",
+        "原型污染|Prototype Pollution|Node特有",
+        "JWT|session|认证机制分析",
+        "NoSQL|MongoDB|Node.js常配数据库"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "skill_name": "ctf-flag-verification",
+  "evals": [
+    {
+      "id": 1,
+      "name": "flag-verification-completeness",
+      "prompt": "你通过 SQL 注入的 EXTRACTVALUE 报错注入提取了一段数据：0aa3ada534b6aa7033dddbf624076c48afd97407bcab9b1d6acb6bc50fa240。LENGTH() 显示 flag 总长 64 字符，但你提取的只有 62 字符。请描述你的验证和修复流程。",
+      "expected_output": "flag 完整性校验和补全策略",
+      "expectations": [
+        "长度检查|LENGTH|64字符|比对长度",
+        "SUBSTRING|MID|分段提取|偏移量提取",
+        "自动化|Python脚本|循环提取|不手动拼接",
+        "重叠验证|前后重叠|确认拼接正确",
+        "hex|SHA|哈希格式|格式特征判断"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "flag-verification-format",
+      "prompt": "你提取到了以下几个可能的 flag：1) FLAG{abc123}  2) flag{abc123}  3) abc123  4) FLAG{abc123（没有闭合括号）。请描述你如何判断哪个是正确的 flag。",
+      "expected_output": "flag 格式校验方法",
+      "expectations": [
+        "FLAG{|格式前缀|大小写|标准格式",
+        "闭合|}|括号完整|格式完整性",
+        "长度|通常32-64字符|hash长度",
+        "hex|[0-9a-f]|哈希字符集|格式规律",
+        "都提交|不确定时都试|多个候选"
+      ]
+    }
+  ]
+}

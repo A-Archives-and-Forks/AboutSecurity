@@ -1,0 +1,31 @@
+{
+  "skill_name": "subdomain-deep",
+  "evals": [
+    {
+      "id": 1,
+      "name": "subdomain-enumeration-methods",
+      "prompt": "你需要尽可能完整地枚举 target.com 的所有子域名。请描述你的多层子域名发现方法。",
+      "expected_output": "多种子域名枚举技术的组合",
+      "expectations": [
+        "字典爆破|DNS爆破|暴力枚举|wordlist",
+        "证书透明度|crt.sh|CT logs|证书日志",
+        "搜索引擎|Google|Bing|搜索语法|site:",
+        "API接口|SecurityTrails|VirusTotal|第三方",
+        "递归|子域的子域|多层枚举|深度发现"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "subdomain-takeover-check",
+      "prompt": "你枚举了 50 个子域名，其中 staging.target.com 的 CNAME 指向 xxx.herokuapp.com，但访问返回 'No such app'。请分析这个发现并描述利用方法。",
+      "expected_output": "子域接管漏洞的识别和利用",
+      "expectations": [
+        "子域接管|subdomain takeover|CNAME悬挂",
+        "Heroku|注册|声明该子域名|接管",
+        "CNAME|指向失效|dangling|悬挂记录",
+        "其他平台|S3|GitHub Pages|Azure|检查所有",
+        "影响|钓鱼|Cookie|同源策略|安全影响"
+      ]
+    }
+  ]
+}

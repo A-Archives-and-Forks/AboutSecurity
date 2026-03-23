@@ -1,0 +1,31 @@
+{
+  "skill_name": "ctf-flag-hunting",
+  "evals": [
+    {
+      "id": 1,
+      "name": "flag-hunting-rce",
+      "prompt": "你在 CTF 中获得了命令执行权限（RCE）。请描述你如何系统性地搜索 flag 文件。",
+      "expected_output": "命令执行后的 flag 搜索流程",
+      "expectations": [
+        "find|locate|搜索文件|*flag*|*FLAG*",
+        "env|环境变量|grep FLAG|环境变量中的flag",
+        "Dockerfile|/flag|/flag.txt|常见位置",
+        "源码|app.py|config|应用文件中的flag",
+        "数据库|sqlite3|mysql|数据库中的flag"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "flag-hunting-no-rce",
+      "prompt": "你在 CTF 中没有 RCE，但有 SQL 注入（UNION SELECT）。请描述你如何通过 SQL 注入寻找和提取 flag。",
+      "expected_output": "通过 SQL 注入提取 flag 的策略",
+      "expectations": [
+        "information_schema|所有表名|所有数据库",
+        "flag|secret|key|关键词搜索表/列",
+        "LIKE|'%flag%'|模糊搜索",
+        "GROUP_CONCAT|一次性提取|高效查询",
+        "load_file|读文件|文件系统中的flag"
+      ]
+    }
+  ]
+}

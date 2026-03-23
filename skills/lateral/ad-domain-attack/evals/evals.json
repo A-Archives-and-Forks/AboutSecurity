@@ -1,0 +1,44 @@
+{
+  "skill_name": "ad-domain-attack",
+  "evals": [
+    {
+      "id": 1,
+      "name": "ad-attack-initial-recon",
+      "prompt": "你获得了一个域内低权限用户(CORP\\jsmith)的凭据。请描述你在 Active Directory 环境中的初始侦察流程。",
+      "expected_output": "AD 域内初始侦察流程",
+      "expectations": [
+        "BloodHound|域信息收集|SharpHound|图数据库",
+        "域控|Domain Controller|DC|定位",
+        "域管理员|Domain Admins|高权限账户|枚举",
+        "GPO|组策略|SPN|Kerberoasting|攻击面",
+        "信任关系|域信任|跨域|forest"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ad-attack-privilege-escalation",
+      "prompt": "BloodHound 分析显示你当前用户 jsmith 对 svc_sql 有 GenericWrite 权限，而 svc_sql 是 Domain Admins 组成员。请描述攻击路径。",
+      "expected_output": "利用 ACL 提权到域管理员",
+      "expectations": [
+        "GenericWrite|修改属性|ACL利用|权限滥用",
+        "SPN|Kerberoasting|设置SPN|服务票据",
+        "密码重置|修改密码|强制更改",
+        "DCSync|mimikatz|域控同步|NTLM哈希",
+        "攻击链|jsmith→svc_sql→Domain Admin|路径"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ad-attack-kerberos",
+      "prompt": "请描述 Kerberoasting 和 AS-REP Roasting 两种 Kerberos 攻击技术的区别和实施方法。",
+      "expected_output": "Kerberos 攻击技术对比",
+      "expectations": [
+        "Kerberoasting|SPN|TGS票据|服务票据",
+        "AS-REP|预认证|不需要预认证|DONT_REQUIRE_PREAUTH",
+        "hashcat|离线破解|密码破解|字典",
+        "GetUserSPNs|Rubeus|impacket|工具",
+        "防御|AES256|强密码|检测方法"
+      ]
+    }
+  ]
+}
