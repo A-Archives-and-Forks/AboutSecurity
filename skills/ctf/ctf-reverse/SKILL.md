@@ -10,19 +10,21 @@ metadata:
 
 # CTF 逆向工程
 
-## ⛔ 深入参考（必读）
+## 深入参考
 
-- ⛔**必读** 静态分析工具（GDB/Ghidra/radare2/IDA/WASM/APK/.NET） → `read_skill(id="ctf-reverse", path="references/tools.md")`
-- ⛔**必读** 动态分析工具（Frida/angr/lldb/Qiling/Triton） → `read_skill(id="ctf-reverse", path="references/tools-dynamic.md")`
-- ⛔**必读** 高级工具（VMProtect/BinDiff/反混淆/Rizin/补丁） → `read_skill(id="ctf-reverse", path="references/tools-advanced.md")`
-- ⛔**必读** 反分析对抗（Linux/Windows反调试/反VM/反DBI/代码完整性） → `read_skill(id="ctf-reverse", path="references/anti-analysis.md")`
-- ⛔**必读** 语言特征（Python字节码/Lua/WASM/.NET IL/Solidity） → `read_skill(id="ctf-reverse", path="references/languages.md")`
-- ⛔**必读** 编译语言（Go/Rust/Swift/Kotlin/C++/D/Nim） → `read_skill(id="ctf-reverse", path="references/languages-compiled.md")`
-- ⛔**必读** 平台特定（嵌入式固件/macOS Mach-O/Android/Flutter/HarmonyOS） → `read_skill(id="ctf-reverse", path="references/platforms.md")`
-- ⛔**必读** 语言与平台综合 → `read_skill(id="ctf-reverse", path="references/languages-platforms.md")`
-- ⛔**必读** 逆向模式（校验/编码/迷宫/虚拟机/游戏引擎） → `read_skill(id="ctf-reverse", path="references/patterns.md")`
-- ⛔**必读** CTF 逆向模式 Part1（自定义加密/矩阵/Brainfuck JIT） → `read_skill(id="ctf-reverse", path="references/patterns-ctf.md")`
-- ⛔**必读** CTF 逆向模式 Part2（约束求解/侧信道/混淆变换） → `read_skill(id="ctf-reverse", path="references/patterns-ctf-2.md")`
+以下参考资料**按需加载**，根据识别出的具体方向选择对应文件：
+
+- 静态分析工具（GDB/Ghidra/radare2/IDA/WASM/APK/.NET） → `read_skill(id="ctf-reverse", path="references/tools.md")`
+- 动态分析工具（Frida/angr/lldb/Qiling/Triton） → `read_skill(id="ctf-reverse", path="references/tools-dynamic.md")`
+- 高级工具（VMProtect/BinDiff/反混淆/Rizin/补丁） → `read_skill(id="ctf-reverse", path="references/tools-advanced.md")`
+- 反分析对抗（Linux/Windows反调试/反VM/反DBI/代码完整性） → `read_skill(id="ctf-reverse", path="references/anti-analysis.md")`
+- 语言特征（Python字节码/Lua/WASM/.NET IL/Solidity） → `read_skill(id="ctf-reverse", path="references/languages.md")`
+- 编译语言（Go/Rust/Swift/Kotlin/C++/D/Nim） → `read_skill(id="ctf-reverse", path="references/languages-compiled.md")`
+- 平台特定（嵌入式固件/macOS Mach-O/Android/Flutter/HarmonyOS） → `read_skill(id="ctf-reverse", path="references/platforms.md")`
+- 语言与平台综合 → `read_skill(id="ctf-reverse", path="references/languages-platforms.md")`
+- 逆向模式（校验/编码/迷宫/虚拟机/游戏引擎） → `read_skill(id="ctf-reverse", path="references/patterns.md")`
+- CTF 逆向模式 Part1（自定义加密/矩阵/Brainfuck JIT） → `read_skill(id="ctf-reverse", path="references/patterns-ctf.md")`
+- CTF 逆向模式 Part2（约束求解/侧信道/混淆变换） → `read_skill(id="ctf-reverse", path="references/patterns-ctf-2.md")`
 
 ---
 

@@ -10,17 +10,19 @@ metadata:
 
 # CTF 杂项挑战
 
-## ⛔ 深入参考（必读）
+## 深入参考
 
-- ⛔**必读** Python 沙箱逃逸（受限字符/func_globals链/类属性持久化） → `read_skill(id="ctf-misc", path="references/pyjails.md")`
-- ⛔**必读** Bash 沙箱/受限Shell逃逸 → `read_skill(id="ctf-misc", path="references/bashjails.md")`
-- ⛔**必读** 编码与解码（QR/esolang/Verilog/BCD/Gray码/SMS PDU） → `read_skill(id="ctf-misc", path="references/encodings.md")`
-- ⛔**必读** RF/SDR 信号处理（QAM-16/载波恢复/定时同步） → `read_skill(id="ctf-misc", path="references/rf-sdr.md")`
-- ⛔**必读** DNS 利用（ECS欺骗/NSEC遍历/IXFR/重绑定/隧道） → `read_skill(id="ctf-misc", path="references/dns.md")`
-- ⛔**必读** 游戏与VM Part1（WASM/Roblox/PyInstaller/K8s/Z3/浮点） → `read_skill(id="ctf-misc", path="references/games-and-vms.md")`
-- ⛔**必读** 游戏与VM Part2（ML权重/WebSocket/Flask/LoRA/De Bruijn） → `read_skill(id="ctf-misc", path="references/games-and-vms-2.md")`
-- ⛔**必读** 游戏与VM Part3（memfd/博弈/ROM切换/Benford/BuildKit） → `read_skill(id="ctf-misc", path="references/games-and-vms-3.md")`
-- ⛔**必读** Linux 提权（sudo通配符/NFS/SSH隧道/PostgreSQL RCE） → `read_skill(id="ctf-misc", path="references/linux-privesc.md")`
+以下参考资料**按需加载**，根据识别出的具体方向选择对应文件：
+
+- Python 沙箱逃逸（受限字符/func_globals链/类属性持久化） → `read_skill(id="ctf-misc", path="references/pyjails.md")`
+- Bash 沙箱/受限Shell逃逸 → `read_skill(id="ctf-misc", path="references/bashjails.md")`
+- 编码与解码（QR/esolang/Verilog/BCD/Gray码/SMS PDU） → `read_skill(id="ctf-misc", path="references/encodings.md")`
+- RF/SDR 信号处理（QAM-16/载波恢复/定时同步） → `read_skill(id="ctf-misc", path="references/rf-sdr.md")`
+- DNS 利用（ECS欺骗/NSEC遍历/IXFR/重绑定/隧道） → `read_skill(id="ctf-misc", path="references/dns.md")`
+- 游戏与VM Part1（WASM/Roblox/PyInstaller/K8s/Z3/浮点） → `read_skill(id="ctf-misc", path="references/games-and-vms.md")`
+- 游戏与VM Part2（ML权重/WebSocket/Flask/LoRA/De Bruijn） → `read_skill(id="ctf-misc", path="references/games-and-vms-2.md")`
+- 游戏与VM Part3（memfd/博弈/ROM切换/Benford/BuildKit） → `read_skill(id="ctf-misc", path="references/games-and-vms-3.md")`
+- Linux 提权（sudo通配符/NFS/SSH隧道/PostgreSQL RCE） → `read_skill(id="ctf-misc", path="references/linux-privesc.md")`
 
 ---
 

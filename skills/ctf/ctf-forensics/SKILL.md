@@ -10,19 +10,21 @@ metadata:
 
 # CTF 数字取证
 
-## ⛔ 深入参考（必读）
+## 深入参考
 
-- ⛔**必读** 磁盘/内存取证（Volatility/VM/VMDK/分区恢复/勒索软件） → `read_skill(id="ctf-forensics", path="references/disk-and-memory.md")`
-- ⛔**必读** 磁盘恢复（LUKS/BTRFS/XFS/RAID5/反雕刻） → `read_skill(id="ctf-forensics", path="references/disk-recovery.md")`
-- ⛔**必读** Windows 取证（注册表/SAM/事件日志/WMI/Amcache） → `read_skill(id="ctf-forensics", path="references/windows.md")`
-- ⛔**必读** Linux/应用取证（Docker/Git/浏览器/KeePass） → `read_skill(id="ctf-forensics", path="references/linux-forensics.md")`
-- ⛔**必读** 网络取证基础（tcpdump/TLS解密/SMB3/USB音频） → `read_skill(id="ctf-forensics", path="references/network.md")`
-- ⛔**必读** 高级网络取证（时序编码/NTLMv2/TCP隐蔽通道/DNS隐写） → `read_skill(id="ctf-forensics", path="references/network-advanced.md")`
-- ⛔**必读** 通用隐写术（PDF/SVG/PNG/文件叠加/终端图形） → `read_skill(id="ctf-forensics", path="references/steganography.md")`
-- ⛔**必读** 图像隐写术（JPEG DQT/BMP位平面/F5检测/调色板） → `read_skill(id="ctf-forensics", path="references/stego-image.md")`
-- ⛔**必读** 高级隐写术（FFT/DTMF/音频/视频帧/JPEG XL） → `read_skill(id="ctf-forensics", path="references/stego-advanced.md")`
-- ⛔**必读** 硬件信号（VGA/HDMI/DisplayPort/功率侧信道/键盘声学） → `read_skill(id="ctf-forensics", path="references/signals-and-hardware.md")`
-- ⛔**必读** 3D 打印取证（PrusaSlicer/G-code/QOIF） → `read_skill(id="ctf-forensics", path="references/3d-printing.md")`
+以下参考资料**按需加载**，根据识别出的具体方向选择对应文件：
+
+- 磁盘/内存取证（Volatility/VM/VMDK/分区恢复/勒索软件） → `read_skill(id="ctf-forensics", path="references/disk-and-memory.md")`
+- 磁盘恢复（LUKS/BTRFS/XFS/RAID5/反雕刻） → `read_skill(id="ctf-forensics", path="references/disk-recovery.md")`
+- Windows 取证（注册表/SAM/事件日志/WMI/Amcache） → `read_skill(id="ctf-forensics", path="references/windows.md")`
+- Linux/应用取证（Docker/Git/浏览器/KeePass） → `read_skill(id="ctf-forensics", path="references/linux-forensics.md")`
+- 网络取证基础（tcpdump/TLS解密/SMB3/USB音频） → `read_skill(id="ctf-forensics", path="references/network.md")`
+- 高级网络取证（时序编码/NTLMv2/TCP隐蔽通道/DNS隐写） → `read_skill(id="ctf-forensics", path="references/network-advanced.md")`
+- 通用隐写术（PDF/SVG/PNG/文件叠加/终端图形） → `read_skill(id="ctf-forensics", path="references/steganography.md")`
+- 图像隐写术（JPEG DQT/BMP位平面/F5检测/调色板） → `read_skill(id="ctf-forensics", path="references/stego-image.md")`
+- 高级隐写术（FFT/DTMF/音频/视频帧/JPEG XL） → `read_skill(id="ctf-forensics", path="references/stego-advanced.md")`
+- 硬件信号（VGA/HDMI/DisplayPort/功率侧信道/键盘声学） → `read_skill(id="ctf-forensics", path="references/signals-and-hardware.md")`
+- 3D 打印取证（PrusaSlicer/G-code/QOIF） → `read_skill(id="ctf-forensics", path="references/3d-printing.md")`
 
 ---
 

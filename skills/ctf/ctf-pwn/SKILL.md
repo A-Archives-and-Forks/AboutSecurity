@@ -10,20 +10,22 @@ metadata:
 
 # CTF 二进制漏洞利用 (Pwn)
 
-## ⛔ 深入参考（必读）
+## 深入参考
 
-- ⛔**必读** 栈溢出/ret2win/Canary绕过 → `read_skill(id="ctf-pwn", path="references/overflow-basics.md")`
-- ⛔**必读** ROP基础（ret2libc/syscall ROP/坏字符绕过） → `read_skill(id="ctf-pwn", path="references/rop-and-shellcode.md")`
-- ⛔**必读** ROP进阶（SROP/seccomp绕过/RETF架构切换） → `read_skill(id="ctf-pwn", path="references/rop-advanced.md")`
-- ⛔**必读** 格式化字符串（泄漏/GOT覆写/Blind Pwn） → `read_skill(id="ctf-pwn", path="references/format-string.md")`
-- ⛔**必读** 堆利用/UAF/JIT/自定义分配器 → `read_skill(id="ctf-pwn", path="references/advanced.md")`
-- ⛔**必读** 高级利用技术 Part1（VM/类型混淆/FSOP） → `read_skill(id="ctf-pwn", path="references/advanced-exploits.md")`
-- ⛔**必读** 高级利用技术 Part2（io_uring/TLS劫持/Windows SEH） → `read_skill(id="ctf-pwn", path="references/advanced-exploits-2.md")`
-- ⛔**必读** 高级利用技术 Part3（JIT沙箱/DNS压缩/ELF签名绕过） → `read_skill(id="ctf-pwn", path="references/advanced-exploits-3.md")`
-- ⛔**必读** 沙箱逃逸（自定义VM/FUSE/受限Shell） → `read_skill(id="ctf-pwn", path="references/sandbox-escape.md")`
-- ⛔**必读** 内核利用基础（QEMU/堆喷/modprobe_path） → `read_skill(id="ctf-pwn", path="references/kernel.md")`
-- ⛔**必读** 内核利用技术（tty_struct/userfaultfd/SLUB） → `read_skill(id="ctf-pwn", path="references/kernel-techniques.md")`
-- ⛔**必读** 内核保护绕过（KASLR/KPTI/SMEP/SMAP） → `read_skill(id="ctf-pwn", path="references/kernel-bypass.md")`
+以下参考资料**按需加载**，根据识别出的具体方向选择对应文件：
+
+- 栈溢出/ret2win/Canary绕过 → `read_skill(id="ctf-pwn", path="references/overflow-basics.md")`
+- ROP基础（ret2libc/syscall ROP/坏字符绕过） → `read_skill(id="ctf-pwn", path="references/rop-and-shellcode.md")`
+- ROP进阶（SROP/seccomp绕过/RETF架构切换） → `read_skill(id="ctf-pwn", path="references/rop-advanced.md")`
+- 格式化字符串（泄漏/GOT覆写/Blind Pwn） → `read_skill(id="ctf-pwn", path="references/format-string.md")`
+- 堆利用/UAF/JIT/自定义分配器 → `read_skill(id="ctf-pwn", path="references/advanced.md")`
+- 高级利用技术 Part1（VM/类型混淆/FSOP） → `read_skill(id="ctf-pwn", path="references/advanced-exploits.md")`
+- 高级利用技术 Part2（io_uring/TLS劫持/Windows SEH） → `read_skill(id="ctf-pwn", path="references/advanced-exploits-2.md")`
+- 高级利用技术 Part3（JIT沙箱/DNS压缩/ELF签名绕过） → `read_skill(id="ctf-pwn", path="references/advanced-exploits-3.md")`
+- 沙箱逃逸（自定义VM/FUSE/受限Shell） → `read_skill(id="ctf-pwn", path="references/sandbox-escape.md")`
+- 内核利用基础（QEMU/堆喷/modprobe_path） → `read_skill(id="ctf-pwn", path="references/kernel.md")`
+- 内核利用技术（tty_struct/userfaultfd/SLUB） → `read_skill(id="ctf-pwn", path="references/kernel-techniques.md")`
+- 内核保护绕过（KASLR/KPTI/SMEP/SMAP） → `read_skill(id="ctf-pwn", path="references/kernel-bypass.md")`
 
 ---
 
