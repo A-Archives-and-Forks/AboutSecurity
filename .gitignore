@@ -5,6 +5,6 @@ upload.sh
 zip.sh
 .github
 .lingma
-
+.claude
 # Benchmark outputs (generated, not committed)
 /benchmarks/
