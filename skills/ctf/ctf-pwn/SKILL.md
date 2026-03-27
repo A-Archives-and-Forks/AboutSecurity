@@ -23,6 +23,20 @@ metadata:
 | 自定义VM / JIT / 类型混淆 / FSOP / Windows / ARM | `read_skill(id="ctf-pwn", path="references/advanced-pwn.md")` |
 | Python沙箱 / FUSE / Busybox / 受限Shell | `read_skill(id="ctf-pwn", path="references/sandbox-escape.md")` |
 
+### 大文件目录索引 (>300行，建议先看目录定位)
+
+**format-string.md (331行)：**
+- Format String Basics / Argument Retargeting / Blind Pwn / Filter Bypass / Canary+PIE Leak / \_\_free\_hook Overwrite / .rela.plt Patching / Game State / .bss Pivot / argv[0] Leak
+
+**kernel-bypass.md (421行)：**
+- KASLR/FGKASLR Bypass / KPTI Bypass (4 methods) / SMEP/SMAP Bypass / GDB Debug / Initramfs Workflow / Exploit Templates
+
+**kernel-exploitation.md (398行)：**
+- QEMU Setup / vmlinux提取 / Config Checks / Heap Spray Structures / ret2usr / kROP / modprobe\_path / core\_pattern / tty\_struct / userfaultfd / SLUB Internals / Cross-Cache / PTE Overlap
+
+**advanced-pwn.md (591行)：**
+- VM Exploitation / Integer Vulnerabilities / Memory Primitives / Arbitrary R/W / FSOP+Heap / Specialized (ASAN/DNS/ELF Signing/JIT) / TLS Destructor / GF(2) Gaussian / Windows/ARM/Forth
+
 ---
 
 ## 分类决策树
