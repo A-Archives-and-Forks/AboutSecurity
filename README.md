@@ -38,7 +38,7 @@ Penetration testing knowledge base with security methodologies in AI Agent-execu
 
 **Dic/** — Dictionary library (lowercase hyphen-separated naming, each directory has `_meta.yaml` metadata)
 
-- `auth/` — Usernames/passwords (complexity-rule passwords, WPA, pinyin names)
+- `auth/` — Usernames/passwords (complexity-rule passwords, WPA, pinyin names), plus default credentials of government/enterprise security appliances & OA systems (`device-default/`)
 - `network/` — DNS servers, excluded IP ranges
 - `port/` — Service-specific brute-force dictionaries (mysql, redis, ssh, etc. — 19 types)
 - `regular/` — General-purpose dictionaries (numbers, letters, addresses, keywords)
