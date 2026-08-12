@@ -30,7 +30,7 @@ Penetration testing knowledge base with security methodologies in AI Agent-execu
 - `postexploit/` — Post-exploitation
   - `post-exploit-linux/` / `post-exploit-windows/` — OS-level privilege escalation, credential theft
   - `persist-maintain/` — Persistence techniques (cron, services, webshell)
-  - `tool-delivery/` — Tool delivery to compromised hosts
+  - `tool-delivery/` — Tool delivery to compromised hosts (fscan, frp, chisel, linpeas, mimikatz, etc.; Linux/Windows transfer methods: wget/curl/certutil/bitsadmin/PowerShell/python/nc/base64/SMB; no-egress scenarios, AV bypass, post-exec cleanup)
   - `product/` — Product-specific post-exploitation tactics (ArgoCD, Harbor, databases, middleware, Portainer, RabbitMQ)
 - `recon/` — Reconnaissance (subdomain enumeration, passive information gathering, JS API extraction)
 - `threat-intel/` — Threat intelligence (IOC evasion, APT simulation, threat hunting evasion)

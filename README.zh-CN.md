@@ -30,7 +30,7 @@
 - `postexploit/` — 后渗透
   - `post-exploit-linux/` / `post-exploit-windows/` — OS 级提权、凭据窃取
   - `persist-maintain/` — 持久化技术（cron、服务、webshell）
-  - `tool-delivery/` — 工具投递到已控主机
+  - `tool-delivery/` — 工具投递到已控主机（fscan、frp、chisel、linpeas、mimikatz 等；Linux/Windows 全平台传输手法：wget/curl/certutil/bitsadmin/PowerShell/python/nc/base64/SMB；无外网出网应对、杀软绕过、执行后痕迹清理）
   - `product/` — 特定产品后渗透技战术（ArgoCD、Harbor、数据库、中间件、Portainer、RabbitMQ）
 - `recon/` — 侦察（子域名枚举、被动信息收集、JS API提取）
 - `threat-intel/` — 威胁情报（IOC对抗、APT模拟、威胁猎杀规避）
