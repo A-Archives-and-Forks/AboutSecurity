@@ -1,7 +1,7 @@
 category: web
 subcategory: directory
 description: Web目录和路径扫描字典集合，按语言和用途分类
-tags: directory,目录扫描,path,路径发现,dirsearch,gobuster,目录枚举
+tags: directory,目录扫描,path,路径发现,dirsearch,gobuster,目录枚举,fuzz,wordlist,brute,content,discovery,爆破,字典,web content discovery
 files:
 - name: admin-dir.txt
   lines: 2167
@@ -12,7 +12,7 @@ files:
   lines: 342
   description: API接口路径和Spring Actuator端点
   usage: API端点发现、Actuator未授权访问探测
-  tags: api,actuator,接口发现,endpoint
+  tags: api,actuator,接口发现,endpoint,controller,控制器,路径,字典,爆破,fuzz
 - name: common.txt
   lines: 5379
   description: 通用Web目录和文件路径
