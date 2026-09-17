@@ -1,6 +1,6 @@
 category: upload
-description: "文件上传测试样本集合，包含各种格式的测试文件和上传表单PoC页面"
-tags: "upload,file upload,文件上传,上传绕过,上传漏洞,文件类型,测试样本"
+description: "文件上传测试样本集合，包含各种格式的测试文件和任意文件上传 getshell 用的上传表单 PoC 页面"
+tags: "upload,file upload,文件上传,任意文件上传,上传绕过,上传漏洞,文件类型,测试样本"
 files:
 - name: 1.doc
   lines: 1
@@ -39,11 +39,11 @@ files:
   tags: "zip,archive,压缩包,格式测试,解压安全"
 - name: upload.html
   lines: 8
-  description: "通用文件上传HTML表单页面，可配置目标上传接口地址"
-  usage: "当目标上传接口无前端页面时，用此表单快速构造文件上传请求"
-  tags: "form,multipart,上传表单,PoC,辅助工具"
+  description: "通用文件上传HTML表单 PoC，用于任意文件上传/getshell 测试"
+  usage: "当目标上传接口无前端页面时，用此表单快速构造任意文件上传 getshell 请求"
+  tags: "form,multipart,上传表单,PoC,poc,getshell,辅助工具"
 - name: upload2.html
   lines: 4
-  description: "精简版文件上传HTML表单页面，指向PHP上传接口"
-  usage: "快速构造针对PHP上传接口的文件上传请求"
-  tags: "form,php,multipart,上传表单,PoC,辅助工具"
+  description: "精简版 PHP 文件上传 HTML 表单 PoC，用于任意文件上传/getshell"
+  usage: "快速构造针对 PHP 上传接口的任意文件上传 getshell 请求"
+  tags: "form,php,multipart,上传表单,PoC,poc,getshell,辅助工具"
